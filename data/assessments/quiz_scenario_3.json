@@ -1,46 +1,46 @@
 {
-  "id": "quiz_scenario_3_v2",
+  "id": "quiz_scenario_3_v3",
   "title": "Scenario 3 knowledge check",
-  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "notes": "PROVISIONAL INSTRUMENT. Revised 2026-10-28 so every item tests real farming knowledge that the game and its feedback actually teach, in plain language for smallholder farmers. Still needs supervisor review before any study use. Editing this file is enough to change the instrument - no code changes are required. Drought maize season: decide early how much ground the water can carry, share one reserve, keep committed tiles out of stress.",
   "questions": [
     {
-      "id": "s2q1",
-      "topic": "water_scarcity",
-      "text": "During the drought the reserve was shared. What did that mean in practice?",
+      "id": "s3q1",
+      "topic": "shared_water",
+      "text": "In a drought, several farmers draw from the same dam or borehole. Why does a shared plan for using the water matter?",
       "options": [
-        "Each player had a private reserve",
-        "Every litre one player used was a litre the other could not use",
-        "Water refilled whenever it ran out",
-        "Only one player could carry water"
+        "It does not - each farmer should take what they need while it lasts",
+        "It does not - rain will refill the dam soon enough",
+        "Every litre one person uses is gone for everyone else",
+        "So everyone can water their whole field a little each day"
       ],
-      "correct_index": 1,
-      "explanation": "There was one reserve for the whole farm, so watering was a joint decision rather than two separate ones."
+      "correct_index": 2,
+      "explanation": "A shared source is one supply. If everyone takes what they want, it can run dry before anyone's crop is ready. Agreeing how much land each person will water, and how much each will draw, means more crops actually reach harvest. The farm reserve in this season worked the same way."
     },
     {
-      "id": "s2q2",
+      "id": "s3q2",
       "topic": "water_scarcity",
-      "text": "With the reserve running low and more field than water, what generally protects the most yield?",
+      "text": "Halfway through a drought you only have enough water to keep about half your maize properly watered. What gives the bigger harvest?",
       "options": [
-        "Give every tile a small amount",
-        "Keep a smaller number of tiles properly watered",
-        "Save the water and use none of it",
-        "Water only the tiles furthest from the well"
+        "Give all of the maize a little water, so none of it dies",
+        "Water whichever plants look driest each day, moving around the field",
+        "Stop watering all of it and wait for rain",
+        "Keep half properly watered and stop watering the other half"
       ],
-      "correct_index": 1,
-      "explanation": "Water spread too thinly leaves everything stressed. Fewer tiles kept out of stress usually harvest better than a whole field kept just below it."
+      "correct_index": 3,
+      "explanation": "Maize kept just below what it needs is stressed everywhere - it grows slowly and may not mature in time. Half a field kept properly watered usually yields more than a whole field kept thirsty. It is a hard choice, which is why it is better made early, before the water runs out."
     },
     {
-      "id": "s2q3",
+      "id": "s3q3",
       "topic": "stress_recovery",
-      "text": "Tiles that spent a long time dry finished the season with a lower yield even after being watered again. Why?",
+      "text": "Some maize went dry for a long time before the rain came. It turned green again but gave a small harvest. Why?",
       "options": [
-        "The watering came from the wrong player",
-        "Condition lost during the dry period is not fully recovered later",
-        "Watering late damages the crop",
-        "The yield was calculated incorrectly"
+        "Rain water is less useful to plants than tank water",
+        "Lost growth is not fully repaired - worst if it was dry around flowering",
+        "Green leaves mean it recovered, so the low harvest was just bad luck",
+        "The rain washed the fertiliser out of the soil"
       ],
       "correct_index": 1,
-      "explanation": "Once a crop has lost condition it does not fully recover, so avoiding the stress is worth more than repairing it afterwards."
+      "explanation": "Green leaves do not mean the crop has recovered: condition lost in a dry spell stays lost. Maize is most sensitive when the tassels and silks appear (flowering) - dryness then means poorly filled cobs, even if rain comes later. If water must be rationed, flowering is the stage to protect."
     }
   ]
 }

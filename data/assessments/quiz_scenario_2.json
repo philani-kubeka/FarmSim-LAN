@@ -1,46 +1,46 @@
 {
-  "id": "quiz_scenario_2_v2",
+  "id": "quiz_scenario_2_v3",
   "title": "Scenario 2 knowledge check",
-  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "notes": "PROVISIONAL INSTRUMENT. Revised 2026-10-28 so every item tests real farming knowledge that the game and its feedback actually teach, in plain language for smallholder farmers. Still needs supervisor review before any study use. Editing this file is enough to change the instrument - no code changes are required. Pest-outbreak bean season: scout to find the outbreak while it is small, treat before it spreads, keep farming the rest of the field.",
   "questions": [
     {
-      "id": "s3q1",
+      "id": "s2q1",
       "topic": "pest_scouting",
-      "text": "How was a pest problem detected on a tile during this scenario?",
+      "text": "When scouting a bean field for pests, where should you look?",
       "options": [
-        "It was announced for every affected tile individually",
-        "By scouting tiles to reveal their condition, and by the warning marker on affected tiles",
-        "It could not be detected until harvest",
-        "By watering every tile"
+        "Along the edge of the field, since that is where pests come in",
+        "Across the field: under leaves, on new growth and on the pods",
+        "At the biggest plants, because pests always go for the strongest",
+        "At the soil around the plants, looking for insect holes"
       ],
       "correct_index": 1,
-      "explanation": "The outbreak was announced, but finding which tiles were affected needed the monitor to go and look."
+      "explanation": "Aphids, whiteflies and pod borers hide under leaves, in soft new growth and on pods, and an outbreak usually starts in one patch. Checking several plants in different parts of the field is how you find it while it is small - which is what the scout tool did this season."
     },
     {
-      "id": "s3q2",
+      "id": "s2q2",
       "topic": "pest_response",
-      "text": "What happened on infested tiles that were left untreated?",
+      "text": "You find aphids on a few bean plants in one corner of the field. What is the best first step?",
       "options": [
-        "They recovered on their own",
-        "Pest pressure kept rising, condition kept dropping, and the problem could spread to neighbouring tiles",
-        "They grew faster",
-        "Only their moisture was affected"
+        "Spray the whole field several times to be safe",
+        "Leave them - a few aphids never cause real damage",
+        "Wait and deal with them after the harvest",
+        "Treat those plants now and check the plants around them"
       ],
-      "correct_index": 1,
-      "explanation": "Damage accumulated for as long as the pests were left, and neighbouring tiles could become infested too."
+      "correct_index": 3,
+      "explanation": "Caught early, an outbreak can be handled on just the affected plants (remove them, wash the insects off, or a targeted treatment), then the neighbouring plants checked over the next few days. Spraying everything costs more and also kills the ladybirds that eat aphids. Left alone, a few aphids become thousands within weeks and spread."
     },
     {
-      "id": "s3q3",
-      "topic": "cooperation",
-      "text": "While one player was dealing with the outbreak, what was the most useful thing for the other player to do?",
+      "id": "s2q3",
+      "topic": "crop_health",
+      "text": "Why should the rest of the crop still be watered and cared for while you deal with a pest outbreak?",
       "options": [
-        "Stop and wait",
-        "Carry on with sowing and irrigation so the rest of the field kept progressing",
-        "Also treat the same tiles",
-        "Restart the season"
+        "Healthy, well-watered plants cope with pest damage much better",
+        "It should not - all effort should go to the pests until they are gone",
+        "Watering should stop, because wet plants attract more pests",
+        "It makes no difference - pests harm healthy and weak plants equally"
       ],
-      "correct_index": 1,
-      "explanation": "Splitting the work meant the outbreak was handled without the rest of the field falling behind - which is the point of having two complementary roles."
+      "correct_index": 0,
+      "explanation": "A plant that is short of water and under attack loses condition from both at once and recovers badly. Keeping the rest of the field watered stops pest damage piling on top of drought damage - and the rest of the season's work still has to get done."
     }
   ]
 }

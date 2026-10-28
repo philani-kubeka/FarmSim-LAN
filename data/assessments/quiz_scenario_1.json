@@ -1,46 +1,46 @@
 {
-  "id": "quiz_scenario_1_v1",
+  "id": "quiz_scenario_1_v3",
   "title": "Scenario 1 knowledge check",
-  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "notes": "PROVISIONAL INSTRUMENT. Revised 2026-10-28 so every item tests real farming knowledge that the game and its feedback actually teach, in plain language for smallholder farmers. Still needs supervisor review before any study use. Editing this file is enough to change the instrument - no code changes are required. Baseline maize season: prepare the seedbed, sow, keep the crop out of water stress, harvest at maturity.",
   "questions": [
     {
       "id": "s1q1",
       "topic": "soil_preparation",
-      "text": "On the farm you just worked, what had to happen to a tile before seed could be sown in it?",
+      "text": "This season, seed would only go into tilled ground. On a real farm, what does a well-prepared seedbed do for maize?",
       "options": [
-        "Nothing, seed can go into any tile",
-        "It had to be tilled first",
-        "It had to be watered first",
-        "It had to be treated for pests first"
+        "It feeds the crop, so less fertiliser is needed",
+        "It keeps the seed dry until the rains come",
+        "It helps the seed sprout evenly and the roots grow down quickly",
+        "Nothing much - seed grows just as well in hard ground"
       ],
-      "correct_index": 1,
-      "explanation": "Untilled ground rejected the seed. Preparing the seedbed came first, which is why the two roles had to work in sequence."
+      "correct_index": 2,
+      "explanation": "Seed in loose, moist soil sprouts at the same time and gets its roots down fast, so the crop comes up even and can reach water deeper in the soil. In hard ground seed sprouts patchily and roots stay shallow, so the plants dry out sooner."
     },
     {
       "id": "s1q2",
-      "topic": "growth_stage",
-      "text": "A sown tile stopped making progress even though nothing had gone wrong with pests. What was the most likely reason?",
+      "topic": "water_stress",
+      "text": "Maize that is kept a bit too dry for weeks - but never wilts badly - will usually:",
       "options": [
-        "Its moisture had fallen too low",
-        "It had been tilled twice",
-        "It was planted too close to the water source",
-        "Crops stop growing at random"
+        "Grow more slowly and give a smaller harvest",
+        "Be fine, because it never wilted",
+        "Grow deeper roots and give a bigger harvest",
+        "Lose a few leaves, but the cobs are not affected"
       ],
       "correct_index": 0,
-      "explanation": "Growth only runs at full speed while a tile has enough moisture. A tile that dries out slows down and then starts losing condition."
+      "explanation": "A crop does not have to wilt to lose yield. Even mild dryness slows growth, and over weeks that adds up to smaller cobs. You saw the same thing in the game: tiles that were 'drying out' grew more slowly than well-watered ones."
     },
     {
       "id": "s1q3",
-      "topic": "cooperation",
-      "text": "Why could one player not have finished the season alone?",
+      "topic": "harvest_timing",
+      "text": "How do you know maize grown for grain is ready to harvest?",
       "options": [
-        "The field is too large for one person to walk",
-        "Only one role can till and sow, and only the other can scout and treat",
-        "The game blocks a single player from moving",
-        "One player runs out of water sooner"
+        "As soon as the silks (the hair on the cob) appear",
+        "When the cobs are full size but the husks are still green",
+        "When the bottom leaves of the plant start to turn yellow",
+        "When the husks are dry and brown and the kernels are hard"
       ],
-      "correct_index": 1,
-      "explanation": "The tools are split between the two roles on purpose, so the season only finishes if both players do their part."
+      "correct_index": 3,
+      "explanation": "Grain maize is mature when the husks have dried and the kernels are hard - a small black layer forms where each kernel joins the cob. Harvested too early, the grain is soft and spoils in storage. Left too long, it is open to birds, rats, insects and rot, so bring it in once it is ready."
     }
   ]
 }

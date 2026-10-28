@@ -14,7 +14,7 @@
 	  "event_start_seconds": 0.0,
 	  "briefing": "A normal maize season. Water is not a problem and the weather is settled. Prepare the seedbed, sow maize, keep it watered and bring in the harvest.",
 	  "objectives": [
-		"Till and sow at least 12 tiles of maize",
+		"Sow as much maize as you can keep watered",
 		"Keep the sown tiles out of water stress",
         "Harvest every tile that reaches maturity"
 	  ],
