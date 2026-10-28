@@ -1,0 +1,46 @@
+{
+  "id": "quiz_scenario_2_v2",
+  "title": "Scenario 2 knowledge check",
+  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "questions": [
+    {
+      "id": "s3q1",
+      "topic": "pest_scouting",
+      "text": "How was a pest problem detected on a tile during this scenario?",
+      "options": [
+        "It was announced for every affected tile individually",
+        "By scouting tiles to reveal their condition, and by the warning marker on affected tiles",
+        "It could not be detected until harvest",
+        "By watering every tile"
+      ],
+      "correct_index": 1,
+      "explanation": "The outbreak was announced, but finding which tiles were affected needed the monitor to go and look."
+    },
+    {
+      "id": "s3q2",
+      "topic": "pest_response",
+      "text": "What happened on infested tiles that were left untreated?",
+      "options": [
+        "They recovered on their own",
+        "Pest pressure kept rising, condition kept dropping, and the problem could spread to neighbouring tiles",
+        "They grew faster",
+        "Only their moisture was affected"
+      ],
+      "correct_index": 1,
+      "explanation": "Damage accumulated for as long as the pests were left, and neighbouring tiles could become infested too."
+    },
+    {
+      "id": "s3q3",
+      "topic": "cooperation",
+      "text": "While one player was dealing with the outbreak, what was the most useful thing for the other player to do?",
+      "options": [
+        "Stop and wait",
+        "Carry on with sowing and irrigation so the rest of the field kept progressing",
+        "Also treat the same tiles",
+        "Restart the season"
+      ],
+      "correct_index": 1,
+      "explanation": "Splitting the work meant the outbreak was handled without the rest of the field falling behind - which is the point of having two complementary roles."
+    }
+  ]
+}

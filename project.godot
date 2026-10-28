@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="FarmSim LAN"
+config/description="FarmSim Local Multiplayer Port - the ITRI671 two-player crop-management simulation, playable on two computers over a LAN."
+run/main_scene="res://scenes/boot.tscn"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/icons/app_icon.png"
+
+[autoload]
+
+Config="*res://scripts/autoload/config.gd"
+InputSetup="*res://scripts/autoload/input_setup.gd"
+Net="*res://scripts/autoload/net.gd"
+GameState="*res://scripts/autoload/game_state.gd"
+GameplayLogger="*res://scripts/autoload/gameplay_logger.gd"
+SessionController="*res://scripts/autoload/session_controller.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+window/handheld/orientation=4
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_mcp/plugin.cfg")
+
+[gui]
+
+theme/custom="res://assets/ui/farm_sim_theme.tres"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+2d/default_gravity=0.0
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.11372549, 0.16470589, 0.12156863, 1)

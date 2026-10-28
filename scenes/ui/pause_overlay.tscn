@@ -1,0 +1,116 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/pause_overlay.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/role_card.tscn" id="3_role_card"]
+
+[node name="PauseOverlay" type="CanvasLayer"]
+process_mode = 3
+layer = 10
+script = ExtResource("1_script")
+
+[node name="PauseRoot" type="Control" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="PauseRoot"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.07, 0.05, 0.82)
+
+[node name="Page" type="MarginContainer" parent="PauseRoot"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="PageScroll" type="ScrollContainer" parent="PauseRoot/Page"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="PauseRoot/Page/PageScroll"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GutterLeft" type="Control" parent="PauseRoot/Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.203125
+mouse_filter = 2
+
+[node name="PageContent" type="VBoxContainer" parent="PauseRoot/Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.59375
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Title"
+text = "Paused"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Hint" type="Label" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+theme_type_variation = &"Dim"
+text = "Press Escape again to carry on."
+horizontal_alignment = 1
+
+[node name="ControlsSpacer" type="Control" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 10)
+
+[node name="Controls" type="HBoxContainer" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="RoleCard1" parent="PauseRoot/Page/PageScroll/Row/PageContent/Controls" instance=ExtResource("3_role_card")]
+player_index = 0
+accent = Color(0.8862745, 0.69411767, 0.23529412, 1)
+
+[node name="RoleCard2" parent="PauseRoot/Page/PageScroll/Row/PageContent/Controls" instance=ExtResource("3_role_card")]
+player_index = 1
+accent = Color(0.37254903, 0.65882355, 0.827451, 1)
+
+[node name="ButtonSpacer" type="Control" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 16)
+
+[node name="Buttons" type="HBoxContainer" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseRoot/Page/PageScroll/Row/PageContent/Buttons"]
+custom_minimum_size = Vector2(220, 46)
+text = "Resume"
+
+[node name="AbandonButton" type="Button" parent="PauseRoot/Page/PageScroll/Row/PageContent/Buttons"]
+custom_minimum_size = Vector2(300, 46)
+text = "Abandon and return to menu"
+
+[node name="WarningSpacer" type="Control" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 8)
+
+[node name="Warning" type="Label" parent="PauseRoot/Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+text = "Abandoning ends the session without a post-test. Whatever has been recorded so far is written to a partial session file so the run is not lost."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="GutterRight" type="Control" parent="PauseRoot/Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.203125
+mouse_filter = 2

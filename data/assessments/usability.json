@@ -1,0 +1,17 @@
+{
+  "id": "usability_v1",
+  "title": "How was the game?",
+  "note": "Provisional. Each player answers on their own after the post-test. Confirm wording with the supervisor before the study.",
+  "choices": [
+    {"id": "yes", "label": "Yes"},
+    {"id": "not_sure", "label": "Not sure"},
+    {"id": "no", "label": "No"}
+  ],
+  "statements": [
+    {"id": "u1", "topic": "controls", "text": "The controls were easy to learn."},
+    {"id": "u2", "topic": "icons_messages", "text": "The icons and messages were clear."},
+    {"id": "u3", "topic": "shared_water", "text": "Sharing one water tank made us talk to each other."},
+    {"id": "u4", "topic": "shared_keyboard", "text": "Sharing one keyboard was comfortable."},
+    {"id": "u5", "topic": "play_again", "text": "I would play this game again."}
+  ]
+}

@@ -1,0 +1,248 @@
+{
+  "event_count": 12,
+  "events": [
+    {
+      "action": "session_started",
+      "category": "session",
+      "mode": "single",
+      "prototype_version": "0.1.0-lan",
+      "session_id": "5gzhbfcr",
+      "t": 0.0
+    },
+    {
+      "action": "roles_confirmed",
+      "category": "session",
+      "player_1_role": "solo",
+      "player_2_role": "",
+      "t": 0.002
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k1",
+      "role": "solo",
+      "seconds": 2.65,
+      "t": 2.716,
+      "topic": "irrigation_timing"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k2",
+      "role": "solo",
+      "seconds": 1.25,
+      "t": 3.966,
+      "topic": "water_scarcity"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k3",
+      "role": "solo",
+      "seconds": 1.48,
+      "t": 5.445,
+      "topic": "growth_stage"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": false,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k4",
+      "role": "solo",
+      "seconds": 1.37,
+      "t": 6.814,
+      "topic": "stress_recovery"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k5",
+      "role": "solo",
+      "seconds": 1.49,
+      "t": 8.308,
+      "topic": "pest_scouting"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k6",
+      "role": "solo",
+      "seconds": 1.28,
+      "t": 9.584,
+      "topic": "pest_response"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k7",
+      "role": "solo",
+      "seconds": 1.66,
+      "t": 11.244,
+      "topic": "soil_preparation"
+    },
+    {
+      "action": "question_answered",
+      "category": "assessment",
+      "correct": true,
+      "kind": "pre_assessment",
+      "player": 1,
+      "question_id": "k8",
+      "role": "solo",
+      "seconds": 1.88,
+      "t": 13.119,
+      "topic": "over_irrigation"
+    },
+    {
+      "action": "assessment_completed",
+      "category": "assessment",
+      "kind": "pre_assessment",
+      "max_score": 8,
+      "percent": 87.5,
+      "player_scores": [
+        {
+          "max_score": 8,
+          "percent": 87.5,
+          "player": 1,
+          "role": "solo",
+          "score": 7
+        }
+      ],
+      "score": 7,
+      "t": 13.12
+    },
+    {
+      "action": "scenario_started",
+      "category": "scenario",
+      "crop": "maize",
+      "event": "none",
+      "scenario_id": "baseline",
+      "scenario_index": 1,
+      "t": 14.126
+    }
+  ],
+  "knowledge_gain_by_player": {
+    "player_1": null,
+    "player_2": null
+  },
+  "knowledge_gain_percent": null,
+  "logged_at_unix": 1792999401,
+  "mode": "single",
+  "player_roles": {
+    "player_1": "solo"
+  },
+  "post_assessment": {},
+  "pre_assessment": {
+    "instrument_id": "pre_assessment_v1",
+    "kind": "pre_assessment",
+    "max_score": 8,
+    "mode": "individual",
+    "percent": 87.5,
+    "players": [
+      {
+        "answers": [
+          {
+            "correct": true,
+            "correct_index": 0,
+            "question_id": "k1",
+            "seconds": 2.65,
+            "selected_index": 0,
+            "topic": "irrigation_timing"
+          },
+          {
+            "correct": true,
+            "correct_index": 1,
+            "question_id": "k2",
+            "seconds": 1.25,
+            "selected_index": 1,
+            "topic": "water_scarcity"
+          },
+          {
+            "correct": true,
+            "correct_index": 1,
+            "question_id": "k3",
+            "seconds": 1.48,
+            "selected_index": 1,
+            "topic": "growth_stage"
+          },
+          {
+            "correct": false,
+            "correct_index": 2,
+            "question_id": "k4",
+            "seconds": 1.37,
+            "selected_index": 1,
+            "topic": "stress_recovery"
+          },
+          {
+            "correct": true,
+            "correct_index": 1,
+            "question_id": "k5",
+            "seconds": 1.49,
+            "selected_index": 1,
+            "topic": "pest_scouting"
+          },
+          {
+            "correct": true,
+            "correct_index": 1,
+            "question_id": "k6",
+            "seconds": 1.28,
+            "selected_index": 1,
+            "topic": "pest_response"
+          },
+          {
+            "correct": true,
+            "correct_index": 1,
+            "question_id": "k7",
+            "seconds": 1.66,
+            "selected_index": 1,
+            "topic": "soil_preparation"
+          },
+          {
+            "correct": true,
+            "correct_index": 0,
+            "question_id": "k8",
+            "seconds": 1.88,
+            "selected_index": 0,
+            "topic": "over_irrigation"
+          }
+        ],
+        "max_score": 8,
+        "percent": 87.5,
+        "player": 1,
+        "role": "solo",
+        "score": 7,
+        "seconds": 13.06
+      }
+    ],
+    "score": 7,
+    "seconds": 13.06
+  },
+  "prototype": "FarmSim",
+  "prototype_version": "0.1.0-lan",
+  "research_context": "ITRI671 Honours treatise artefact",
+  "scenario_quizzes": [],
+  "scenarios": [],
+  "session_id": "5gzhbfcr",
+  "session_started_unix": 1792999387,
+  "total_yield": 0.0,
+  "usability": {}
+}

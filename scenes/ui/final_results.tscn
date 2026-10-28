@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/final_results.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/stat_card.tscn" id="3_stat"]
+
+[node name="FinalResults" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11372549, 0.16470589, 0.12156863, 1)
+
+[node name="Page" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="PageScroll" type="ScrollContainer" parent="Page"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Page/PageScroll"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GutterLeft" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.03
+mouse_filter = 2
+
+[node name="PageContent" type="VBoxContainer" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.94
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Title"
+text = "Session complete"
+autowrap_mode = 3
+
+[node name="SessionId" type="Label" parent="Page/PageScroll/Row/PageContent"]
+theme_type_variation = &"Dim"
+text = "Anonymous session id:"
+
+[node name="KnowledgeSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 6)
+
+[node name="KnowledgeHeading" type="Label" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Heading"
+text = "Knowledge check"
+autowrap_mode = 3
+
+[node name="Knowledge" type="HBoxContainer" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Before" parent="Page/PageScroll/Row/PageContent/Knowledge" instance=ExtResource("3_stat")]
+caption = "Before playing"
+value = "-"
+
+[node name="After" parent="Page/PageScroll/Row/PageContent/Knowledge" instance=ExtResource("3_stat")]
+caption = "After playing"
+value = "-"
+
+[node name="Change" parent="Page/PageScroll/Row/PageContent/Knowledge" instance=ExtResource("3_stat")]
+caption = "Change"
+value = "not available"
+
+[node name="SeasonsSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 10)
+
+[node name="SeasonsHeading" type="Label" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Heading"
+text = "Seasons"
+autowrap_mode = 3
+
+[node name="Seasons" type="PanelContainer" parent="Page/PageScroll/Row/PageContent"]
+theme_type_variation = &"PanelLight"
+
+[node name="Box" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Seasons"]
+theme_override_constants/separation = 6
+
+[node name="DataSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 10)
+
+[node name="Data" type="PanelContainer" parent="Page/PageScroll/Row/PageContent"]
+
+[node name="Box" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Data"]
+theme_override_constants/separation = 4
+
+[node name="Heading" type="Label" parent="Page/PageScroll/Row/PageContent/Data/Box"]
+text = "Research data"
+
+[node name="Note" type="Label" parent="Page/PageScroll/Row/PageContent/Data/Box"]
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+autowrap_mode = 3
+
+[node name="ButtonSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 14)
+
+[node name="Buttons" type="HBoxContainer" parent="Page/PageScroll/Row/PageContent"]
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="MenuButton" type="Button" parent="Page/PageScroll/Row/PageContent/Buttons"]
+custom_minimum_size = Vector2(180, 44)
+text = "Back to main menu"
+
+[node name="QuitButton" type="Button" parent="Page/PageScroll/Row/PageContent/Buttons"]
+custom_minimum_size = Vector2(180, 44)
+text = "Quit"
+
+[node name="GutterRight" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.03
+mouse_filter = 2

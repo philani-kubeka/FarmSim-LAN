@@ -1,0 +1,364 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/multiplayer_menu.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://scripts/net/lan_discovery.gd" id="3_discovery"]
+[ext_resource type="Texture2D" path="res://assets/environment/grass.png" id="4_grass"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/player_slot.tscn" id="5_slot"]
+
+[node name="MultiplayerMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11372549, 0.16470589, 0.12156863, 1)
+
+[node name="Grass" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.22)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_grass")
+stretch_mode = 1
+
+[node name="LanDiscovery" type="Node" parent="."]
+script = ExtResource("3_discovery")
+
+[node name="Page" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 18
+
+[node name="PageScroll" type="ScrollContainer" parent="Page"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Layout" type="VBoxContainer" parent="Page/PageScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Header" type="HBoxContainer" parent="Page/PageScroll/Layout"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="Page/PageScroll/Layout/Header"]
+custom_minimum_size = Vector2(150, 56)
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"GhostButton"
+text = "< Back"
+
+[node name="Titles" type="VBoxContainer" parent="Page/PageScroll/Layout/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Page/PageScroll/Layout/Header/Titles"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "Play Together"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Page/PageScroll/Layout/Header/Titles"]
+layout_mode = 2
+theme_type_variation = &"Dim"
+text = "Two devices on the same Wi-Fi, one farmer each."
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HeaderBalance" type="Control" parent="Page/PageScroll/Layout/Header"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Body" type="HBoxContainer" parent="Page/PageScroll/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="Rail" type="VBoxContainer" parent="Page/PageScroll/Layout/Body"]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+theme_override_constants/separation = 10
+
+[node name="HostTab" type="Button" parent="Page/PageScroll/Layout/Body/Rail"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_type_variation = &"RailButton"
+toggle_mode = true
+button_pressed = true
+text = "Host a game"
+alignment = 0
+
+[node name="FindTab" type="Button" parent="Page/PageScroll/Layout/Body/Rail"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_type_variation = &"RailButton"
+toggle_mode = true
+text = "Find games"
+alignment = 0
+
+[node name="AddressTab" type="Button" parent="Page/PageScroll/Layout/Body/Rail"]
+custom_minimum_size = Vector2(0, 62)
+layout_mode = 2
+theme_type_variation = &"RailButton"
+toggle_mode = true
+text = "Join by address"
+alignment = 0
+
+[node name="RailSpacer" type="Control" parent="Page/PageScroll/Layout/Body/Rail"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="DeviceLabel" type="Label" parent="Page/PageScroll/Layout/Body/Rail"]
+layout_mode = 2
+theme_type_variation = &"Dim"
+text = "This device"
+
+[node name="DeviceAddress" type="Label" parent="Page/PageScroll/Layout/Body/Rail"]
+layout_mode = 2
+theme_type_variation = &"Pill"
+text = "192.168.1.20"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="Card" type="PanelContainer" parent="Page/PageScroll/Layout/Body"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"Card"
+
+[node name="Pages" type="MarginContainer" parent="Page/PageScroll/Layout/Body/Card"]
+layout_mode = 2
+
+[node name="HostPage" type="VBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage"]
+layout_mode = 2
+theme_type_variation = &"Heading"
+text = "Host a farm on this network"
+
+[node name="Blurb" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+text = "You play as Player 1 and run the session. Your partner finds your farm under Find games."
+autowrap_mode = 3
+
+[node name="NameRow" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="NameLabel" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage/NameRow"]
+layout_mode = 2
+theme_type_variation = &"Display"
+text = "Farm name"
+
+[node name="HostName" type="LineEdit" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage/NameRow"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+size_flags_horizontal = 3
+max_length = 32
+placeholder_text = "My farm"
+select_all_on_focus = true
+
+[node name="HostPreview" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Slot1" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage/HostPreview" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="Slot2" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage/HostPreview" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="HostButton" type="Button" parent="Page/PageScroll/Layout/Body/Card/Pages/HostPage"]
+custom_minimum_size = Vector2(260, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ChunkyButton"
+text = "Host game"
+
+[node name="FindPage" type="VBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="FindHeader" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage"]
+layout_mode = 2
+
+[node name="Heading" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage/FindHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Heading"
+text = "Farms nearby"
+
+[node name="Searching" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage/FindHeader"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Pill"
+text = "Searching..."
+
+[node name="GameScroll" type="ScrollContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="GameList" type="VBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage/GameScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="EmptyState" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage/GameScroll/GameList"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+text = "Looking for farms on your Wi-Fi...
+Ask your partner to press Host game."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FindHint" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/FindPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+text = "Tap a farm to join it. Not showing up? Try Join by address."
+autowrap_mode = 3
+
+[node name="AddressPage" type="VBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Heading" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/AddressPage"]
+layout_mode = 2
+theme_type_variation = &"Heading"
+text = "Join by address"
+
+[node name="Blurb" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/AddressPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+text = "Some school and campus networks hide games from each other. Type the address shown on the host's screen instead."
+autowrap_mode = 3
+
+[node name="Address" type="LineEdit" parent="Page/PageScroll/Layout/Body/Card/Pages/AddressPage"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+placeholder_text = "e.g. 192.168.1.20"
+virtual_keyboard_type = 7
+
+[node name="AddressSpacer" type="Control" parent="Page/PageScroll/Layout/Body/Card/Pages/AddressPage"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="JoinAddressButton" type="Button" parent="Page/PageScroll/Layout/Body/Card/Pages/AddressPage"]
+custom_minimum_size = Vector2(260, 68)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_type_variation = &"ChunkyButton"
+text = "Join"
+
+[node name="LobbyPage" type="VBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="LobbyHeader" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="LobbyName" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/LobbyHeader"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Heading"
+text = "Sulaiman's farm"
+text_overrun_behavior = 3
+
+[node name="LobbyAddress" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/LobbyHeader"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_type_variation = &"Pill"
+text = "192.168.1.20"
+
+[node name="Slots" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 14
+
+[node name="Slot1" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/Slots" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="Slot2" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/Slots" instance=ExtResource("5_slot")]
+layout_mode = 2
+
+[node name="LobbyStatus" type="Label" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Waiting for Player 2 to join..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="LobbyButtons" type="HBoxContainer" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage"]
+layout_mode = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="LeaveButton" type="Button" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/LobbyButtons"]
+custom_minimum_size = Vector2(190, 64)
+layout_mode = 2
+theme_type_variation = &"DangerButton"
+text = "Leave"
+
+[node name="StartButton" type="Button" parent="Page/PageScroll/Layout/Body/Card/Pages/LobbyPage/LobbyButtons"]
+custom_minimum_size = Vector2(260, 64)
+layout_mode = 2
+theme_type_variation = &"PrimaryButton"
+disabled = true
+text = "Start session"
+
+[node name="Notice" type="Label" parent="Page/PageScroll/Layout"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_alignment = 1
+autowrap_mode = 3

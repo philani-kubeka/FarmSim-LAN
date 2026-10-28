@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/role_card.gd" id="1_script"]
+
+[node name="RoleCard" type="PanelContainer"]
+size_flags_horizontal = 3
+script = ExtResource("1_script")
+
+[node name="Box" type="VBoxContainer" parent="."]
+theme_override_constants/separation = 4
+
+[node name="PlayerName" type="Label" parent="Box"]
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = "Player 1 - Planter / Irrigator"
+
+[node name="Description" type="Label" parent="Box"]
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+autowrap_mode = 3
+text = "What this player is responsible for."
+
+[node name="Move" type="Label" parent="Box"]
+autowrap_mode = 3
+theme_type_variation = &"Dim"
+text = "Move:"
+
+[node name="Use" type="Label" parent="Box"]
+autowrap_mode = 3
+theme_type_variation = &"Dim"
+text = "Use tool:"
+
+[node name="Tools" type="Label" parent="Box"]
+size_flags_horizontal = 3
+theme_type_variation = &"Note"
+autowrap_mode = 3
+text = "Carries:"

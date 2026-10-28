@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/player_slot.gd" id="1_script"]
+
+[node name="PlayerSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 150)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_script")
+
+[node name="Box" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Top" type="HBoxContainer" parent="Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Portrait" type="TextureRect" parent="Box/Top"]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Badge" type="Label" parent="Box/Top"]
+layout_mode = 2
+theme_type_variation = &"Title"
+text = "P1"
+
+[node name="Who" type="Label" parent="Box"]
+layout_mode = 2
+theme_type_variation = &"Display"
+text = "You"
+horizontal_alignment = 1
+text_overrun_behavior = 3
+
+[node name="State" type="Label" parent="Box"]
+layout_mode = 2
+theme_type_variation = &"Dim"
+text = "Host"
+horizontal_alignment = 1
+text_overrun_behavior = 3

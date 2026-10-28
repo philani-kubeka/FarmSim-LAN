@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/farm/player.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/characters/player_1.png" id="2_body"]
+[ext_resource type="Texture2D" path="res://assets/tools/hoe.png" id="3_tool"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 13.0
+
+[node name="Player" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 14)
+shape = SubResource("CircleShape2D_body")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_body")
+
+[node name="Tag" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -48.0
+offset_right = 30.0
+offset_bottom = -22.0
+mouse_filter = 2
+theme_override_colors/font_color = Color(0.8862745, 0.69411767, 0.23529412, 1)
+theme_override_font_sizes/font_size = 14
+text = "P1"
+
+[node name="ToolIcon" type="Sprite2D" parent="."]
+position = Vector2(18, -30)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_tool")

@@ -1,0 +1,111 @@
+{
+  "id": "post_assessment_v1",
+  "title": "Post-session knowledge check",
+  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required. The post-test uses the same eight items as the pre-test, presented in a different order, so that the two scores are directly comparable.",
+  "questions": [
+    {
+      "id": "k3",
+      "topic": "growth_stage",
+      "text": "At which stage is maize most sensitive to a shortage of water?",
+      "options": [
+        "Immediately after planting",
+        "Around flowering, when the tassels and silks appear",
+        "Once the cobs have already dried",
+        "Maize is equally sensitive at every stage"
+      ],
+      "correct_index": 1,
+      "explanation": "Water shortage around flowering has a much larger effect on the final yield than a shortage at most other stages."
+    },
+    {
+      "id": "k6",
+      "topic": "pest_response",
+      "text": "Why does a delay in responding to a pest outbreak matter?",
+      "options": [
+        "It does not matter as long as you treat before harvest",
+        "Pest numbers and the damage they cause keep increasing, and the problem can spread to neighbouring plants",
+        "Pests only damage plants on the day they arrive",
+        "Delaying makes treatment more effective"
+      ],
+      "correct_index": 1,
+      "explanation": "Untreated pests keep feeding and can move to nearby plants, so the same outbreak costs more the longer it is left."
+    },
+    {
+      "id": "k1",
+      "topic": "irrigation_timing",
+      "text": "Irrigating in the middle of a hot, windy day usually wastes water. Why?",
+      "options": [
+        "Water applied at midday is more likely to be lost to evaporation before the plants can use it",
+        "Plants stop taking up water while the sun is out",
+        "Midday water damages maize leaves",
+        "Soil cannot absorb water while it is warm"
+      ],
+      "correct_index": 0,
+      "explanation": "Evaporation losses are highest when it is hot and windy, so the same amount of water goes further early in the morning or late in the afternoon."
+    },
+    {
+      "id": "k8",
+      "topic": "over_irrigation",
+      "text": "What happens when far more water is applied to a tile than the soil can hold?",
+      "options": [
+        "The extra water drains past the roots and is wasted",
+        "The crop grows proportionally faster",
+        "The extra water is stored for later in the season",
+        "The crop becomes immune to drought"
+      ],
+      "correct_index": 0,
+      "explanation": "Soil can only hold so much water. Anything beyond that drains below the root zone and is lost, which is expensive when the reserve is shared and limited."
+    },
+    {
+      "id": "k4",
+      "topic": "stress_recovery",
+      "text": "A block of maize was left dry for a long stretch of the season and lost condition. It is then watered well for the rest of the season. What should you expect?",
+      "options": [
+        "It fully catches up with the rest of the field",
+        "It produces more than the rest of the field because of the extra water",
+        "It recovers partly, but the yield from that block stays lower",
+        "It makes no difference either way"
+      ],
+      "correct_index": 2,
+      "explanation": "Damage done during a stress period is not fully undone by watering afterwards, which is why keeping a crop out of stress matters more than rescuing it later."
+    },
+    {
+      "id": "k2",
+      "topic": "water_scarcity",
+      "text": "The water reserve is nearly empty and there is still a lot of field left. What is generally the better decision?",
+      "options": [
+        "Spread the remaining water thinly across every plant",
+        "Concentrate the remaining water on part of the field so those plants stay out of stress",
+        "Stop watering entirely and hope for rain",
+        "Water only the plants that already look worst"
+      ],
+      "correct_index": 1,
+      "explanation": "Giving every plant less than it needs can leave the whole field stressed. Keeping a smaller area properly watered usually protects more of the harvest."
+    },
+    {
+      "id": "k7",
+      "topic": "soil_preparation",
+      "text": "Why is the soil prepared before the seed goes in?",
+      "options": [
+        "To make the field look tidy",
+        "To loosen the seedbed so seed sits in good contact with soil and roots and water can move into it",
+        "To dry the soil out before planting",
+        "It is only done because of tradition"
+      ],
+      "correct_index": 1,
+      "explanation": "A loosened seedbed gives better seed-to-soil contact and lets roots and water move through the soil more easily."
+    },
+    {
+      "id": "k5",
+      "topic": "pest_scouting",
+      "text": "What is the most reliable way to pick up a pest problem early?",
+      "options": [
+        "Wait until damage is visible from the edge of the field",
+        "Walk through the field regularly and inspect plants closely, including under the leaves",
+        "Treat the whole field on a fixed schedule whether or not pests are present",
+        "Judge it from the colour of the soil"
+      ],
+      "correct_index": 1,
+      "explanation": "Regular scouting finds a problem while it is still small and still confined to a few plants."
+    }
+  ]
+}

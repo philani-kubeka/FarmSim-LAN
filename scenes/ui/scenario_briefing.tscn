@@ -1,0 +1,129 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/scenario_briefing.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/role_card.tscn" id="3_role_card"]
+
+[node name="ScenarioBriefing" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11372549, 0.16470589, 0.12156863, 1)
+
+[node name="Page" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 18
+
+[node name="PageScroll" type="ScrollContainer" parent="Page"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Page/PageScroll"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GutterLeft" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+mouse_filter = 2
+
+[node name="PageContent" type="VBoxContainer" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.96
+theme_override_constants/separation = 12
+
+[node name="Header" type="HBoxContainer" parent="Page/PageScroll/Row/PageContent"]
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="Page/PageScroll/Row/PageContent/Header"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+theme_type_variation = &"Title"
+text = "Scenario"
+text_overrun_behavior = 3
+
+[node name="Season" type="Label" parent="Page/PageScroll/Row/PageContent/Header"]
+unique_name_in_owner = true
+size_flags_vertical = 4
+theme_type_variation = &"Pill"
+theme_override_font_sizes/font_size = 17
+text = "Season 1 of 3"
+
+[node name="Columns" type="HBoxContainer" parent="Page/PageScroll/Row/PageContent"]
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="Left" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Briefing" type="PanelContainer" parent="Page/PageScroll/Row/PageContent/Columns/Left"]
+theme_type_variation = &"PanelLight"
+
+[node name="Text" type="Label" parent="Page/PageScroll/Row/PageContent/Columns/Left/Briefing"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "What this season is about."
+autowrap_mode = 3
+
+[node name="Objectives" type="PanelContainer" parent="Page/PageScroll/Row/PageContent/Columns/Left"]
+size_flags_vertical = 3
+
+[node name="Outer" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns/Left/Objectives"]
+theme_override_constants/separation = 8
+
+[node name="ObjectivesHeading" type="Label" parent="Page/PageScroll/Row/PageContent/Columns/Left/Objectives/Outer"]
+theme_type_variation = &"Heading"
+theme_override_font_sizes/font_size = 22
+text = "What you are trying to do"
+
+[node name="ObjectiveList" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns/Left/Objectives/Outer"]
+unique_name_in_owner = true
+theme_override_constants/separation = 6
+
+[node name="Roles" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.9
+theme_override_constants/separation = 12
+
+[node name="RoleCard1" parent="Page/PageScroll/Row/PageContent/Columns/Roles" instance=ExtResource("3_role_card")]
+size_flags_vertical = 3
+player_index = 0
+accent = Color(0.8862745, 0.69411767, 0.23529412, 1)
+
+[node name="RoleCard2" parent="Page/PageScroll/Row/PageContent/Columns/Roles" instance=ExtResource("3_role_card")]
+size_flags_vertical = 3
+player_index = 1
+accent = Color(0.37254903, 0.65882355, 0.827451, 1)
+
+[node name="StartButton" type="Button" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(340, 58)
+size_flags_horizontal = 4
+theme_type_variation = &"PrimaryButton"
+text = "Start the season"
+
+[node name="GutterRight" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+mouse_filter = 2

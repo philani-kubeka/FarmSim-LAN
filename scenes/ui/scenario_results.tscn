@@ -1,0 +1,132 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/scenario_results.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/stat_card.tscn" id="3_stat"]
+
+[node name="ScenarioResults" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11372549, 0.16470589, 0.12156863, 1)
+
+[node name="Page" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 18
+
+[node name="PageScroll" type="ScrollContainer" parent="Page"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Page/PageScroll"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GutterLeft" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+mouse_filter = 2
+
+[node name="PageContent" type="VBoxContainer" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.96
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Page/PageScroll/Row/PageContent"]
+unique_name_in_owner = true
+theme_type_variation = &"Title"
+text = "Season - results"
+text_overrun_behavior = 3
+
+[node name="Columns" type="HBoxContainer" parent="Page/PageScroll/Row/PageContent"]
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+
+[node name="StatGrid" type="GridContainer" parent="Page/PageScroll/Row/PageContent/Columns"]
+unique_name_in_owner = true
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.75
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Harvest" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Harvest"
+
+[node name="Sown" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Tiles sown"
+
+[node name="Harvests" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Harvests taken"
+
+[node name="Growing" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Still growing"
+
+[node name="Failed" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Failed"
+
+[node name="Condition" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Avg condition"
+
+[node name="WaterUsed" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Water used"
+
+[node name="Refused" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Refused waterings"
+
+[node name="Event" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+caption = "Event"
+
+[node name="Infested" parent="Page/PageScroll/Row/PageContent/Columns/StatGrid" instance=ExtResource("3_stat")]
+visible = false
+caption = "Tiles infested"
+
+[node name="Why" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns"]
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="NotesHeading" type="Label" parent="Page/PageScroll/Row/PageContent/Columns/Why"]
+theme_type_variation = &"Heading"
+theme_override_font_sizes/font_size = 22
+text = "Why the season went the way it did"
+text_overrun_behavior = 3
+
+[node name="Notes" type="PanelContainer" parent="Page/PageScroll/Row/PageContent/Columns/Why"]
+size_flags_vertical = 3
+theme_type_variation = &"PanelLight"
+
+[node name="Box" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Columns/Why/Notes"]
+unique_name_in_owner = true
+theme_override_constants/separation = 6
+
+[node name="ContinueButton" type="Button" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(380, 56)
+size_flags_horizontal = 4
+theme_type_variation = &"PrimaryButton"
+text = "Continue to the knowledge check"
+
+[node name="GutterRight" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.02
+mouse_filter = 2

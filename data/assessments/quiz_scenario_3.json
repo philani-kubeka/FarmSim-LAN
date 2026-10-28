@@ -1,0 +1,46 @@
+{
+  "id": "quiz_scenario_3_v2",
+  "title": "Scenario 3 knowledge check",
+  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "questions": [
+    {
+      "id": "s2q1",
+      "topic": "water_scarcity",
+      "text": "During the drought the reserve was shared. What did that mean in practice?",
+      "options": [
+        "Each player had a private reserve",
+        "Every litre one player used was a litre the other could not use",
+        "Water refilled whenever it ran out",
+        "Only one player could carry water"
+      ],
+      "correct_index": 1,
+      "explanation": "There was one reserve for the whole farm, so watering was a joint decision rather than two separate ones."
+    },
+    {
+      "id": "s2q2",
+      "topic": "water_scarcity",
+      "text": "With the reserve running low and more field than water, what generally protects the most yield?",
+      "options": [
+        "Give every tile a small amount",
+        "Keep a smaller number of tiles properly watered",
+        "Save the water and use none of it",
+        "Water only the tiles furthest from the well"
+      ],
+      "correct_index": 1,
+      "explanation": "Water spread too thinly leaves everything stressed. Fewer tiles kept out of stress usually harvest better than a whole field kept just below it."
+    },
+    {
+      "id": "s2q3",
+      "topic": "stress_recovery",
+      "text": "Tiles that spent a long time dry finished the season with a lower yield even after being watered again. Why?",
+      "options": [
+        "The watering came from the wrong player",
+        "Condition lost during the dry period is not fully recovered later",
+        "Watering late damages the crop",
+        "The yield was calculated incorrectly"
+      ],
+      "correct_index": 1,
+      "explanation": "Once a crop has lost condition it does not fully recover, so avoiding the stress is worth more than repairing it afterwards."
+    }
+  ]
+}

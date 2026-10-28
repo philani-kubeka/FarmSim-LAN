@@ -1,0 +1,46 @@
+{
+  "id": "quiz_scenario_1_v1",
+  "title": "Scenario 1 knowledge check",
+  "notes": "PROVISIONAL INSTRUMENT. These items were drafted for the FarmSim prototype and have NOT been reviewed or approved by a supervisor. Review and revise before any study use. Editing this file is enough to change the instrument - no code changes are required.",
+  "questions": [
+    {
+      "id": "s1q1",
+      "topic": "soil_preparation",
+      "text": "On the farm you just worked, what had to happen to a tile before seed could be sown in it?",
+      "options": [
+        "Nothing, seed can go into any tile",
+        "It had to be tilled first",
+        "It had to be watered first",
+        "It had to be treated for pests first"
+      ],
+      "correct_index": 1,
+      "explanation": "Untilled ground rejected the seed. Preparing the seedbed came first, which is why the two roles had to work in sequence."
+    },
+    {
+      "id": "s1q2",
+      "topic": "growth_stage",
+      "text": "A sown tile stopped making progress even though nothing had gone wrong with pests. What was the most likely reason?",
+      "options": [
+        "Its moisture had fallen too low",
+        "It had been tilled twice",
+        "It was planted too close to the water source",
+        "Crops stop growing at random"
+      ],
+      "correct_index": 0,
+      "explanation": "Growth only runs at full speed while a tile has enough moisture. A tile that dries out slows down and then starts losing condition."
+    },
+    {
+      "id": "s1q3",
+      "topic": "cooperation",
+      "text": "Why could one player not have finished the season alone?",
+      "options": [
+        "The field is too large for one person to walk",
+        "Only one role can till and sow, and only the other can scout and treat",
+        "The game blocks a single player from moving",
+        "One player runs out of water sooner"
+      ],
+      "correct_index": 1,
+      "explanation": "The tools are split between the two roles on purpose, so the season only finishes if both players do their part."
+    }
+  ]
+}

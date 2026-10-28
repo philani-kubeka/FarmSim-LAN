@@ -1,0 +1,157 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/farm/field.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://scenes/farm/crop_tile.tscn" id="2_tile"]
+
+[node name="Field" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Tile_0_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(32, 32)
+
+[node name="Tile_1_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(96, 32)
+
+[node name="Tile_2_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(160, 32)
+
+[node name="Tile_3_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(224, 32)
+
+[node name="Tile_4_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(288, 32)
+
+[node name="Tile_5_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(352, 32)
+
+[node name="Tile_6_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(416, 32)
+
+[node name="Tile_7_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(480, 32)
+
+[node name="Tile_8_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(544, 32)
+
+[node name="Tile_9_0" parent="." instance=ExtResource("2_tile")]
+position = Vector2(608, 32)
+
+[node name="Tile_0_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(32, 96)
+
+[node name="Tile_1_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(96, 96)
+
+[node name="Tile_2_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(160, 96)
+
+[node name="Tile_3_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(224, 96)
+
+[node name="Tile_4_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(288, 96)
+
+[node name="Tile_5_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(352, 96)
+
+[node name="Tile_6_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(416, 96)
+
+[node name="Tile_7_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(480, 96)
+
+[node name="Tile_8_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(544, 96)
+
+[node name="Tile_9_1" parent="." instance=ExtResource("2_tile")]
+position = Vector2(608, 96)
+
+[node name="Tile_0_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(32, 160)
+
+[node name="Tile_1_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(96, 160)
+
+[node name="Tile_2_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(160, 160)
+
+[node name="Tile_3_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(224, 160)
+
+[node name="Tile_4_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(288, 160)
+
+[node name="Tile_5_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(352, 160)
+
+[node name="Tile_6_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(416, 160)
+
+[node name="Tile_7_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(480, 160)
+
+[node name="Tile_8_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(544, 160)
+
+[node name="Tile_9_2" parent="." instance=ExtResource("2_tile")]
+position = Vector2(608, 160)
+
+[node name="Tile_0_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(32, 224)
+
+[node name="Tile_1_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(96, 224)
+
+[node name="Tile_2_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(160, 224)
+
+[node name="Tile_3_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(224, 224)
+
+[node name="Tile_4_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(288, 224)
+
+[node name="Tile_5_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(352, 224)
+
+[node name="Tile_6_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(416, 224)
+
+[node name="Tile_7_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(480, 224)
+
+[node name="Tile_8_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(544, 224)
+
+[node name="Tile_9_3" parent="." instance=ExtResource("2_tile")]
+position = Vector2(608, 224)
+
+[node name="Tile_0_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(32, 288)
+
+[node name="Tile_1_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(96, 288)
+
+[node name="Tile_2_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(160, 288)
+
+[node name="Tile_3_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(224, 288)
+
+[node name="Tile_4_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(288, 288)
+
+[node name="Tile_5_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(352, 288)
+
+[node name="Tile_6_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(416, 288)
+
+[node name="Tile_7_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(480, 288)
+
+[node name="Tile_8_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(544, 288)
+
+[node name="Tile_9_4" parent="." instance=ExtResource("2_tile")]
+position = Vector2(608, 288)

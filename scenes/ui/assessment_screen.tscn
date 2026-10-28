@@ -1,0 +1,118 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/assessment_screen.gd" id="1_script"]
+[ext_resource type="Theme" path="res://assets/ui/farm_sim_theme.tres" id="2_theme"]
+[ext_resource type="PackedScene" path="res://scenes/ui/components/quiz_option.tscn" id="3_option"]
+
+[node name="AssessmentScreen" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_script")
+
+[node name="Background" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11372549, 0.16470589, 0.12156863, 1)
+
+[node name="Page" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="PageScroll" type="ScrollContainer" parent="Page"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Page/PageScroll"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GutterLeft" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1484375
+mouse_filter = 2
+
+[node name="PageContent" type="VBoxContainer" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.703125
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+theme_type_variation = &"Title"
+text = "Knowledge check"
+autowrap_mode = 3
+
+[node name="Intro" type="Label" parent="Page/PageScroll/Row/PageContent"]
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="Progress" type="Label" parent="Page/PageScroll/Row/PageContent"]
+theme_type_variation = &"Dim"
+
+[node name="QuestionSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 8)
+
+[node name="Question" type="PanelContainer" parent="Page/PageScroll/Row/PageContent"]
+theme_type_variation = &"PanelLight"
+
+[node name="Box" type="VBoxContainer" parent="Page/PageScroll/Row/PageContent/Question"]
+theme_override_constants/separation = 10
+
+[node name="QuestionText" type="Label" parent="Page/PageScroll/Row/PageContent/Question/Box"]
+size_flags_horizontal = 3
+theme_type_variation = &"Heading"
+autowrap_mode = 3
+
+[node name="Option0" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Option1" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Option2" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Option3" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Option4" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Option5" parent="Page/PageScroll/Row/PageContent/Question/Box" instance=ExtResource("3_option")]
+visible = false
+
+[node name="Feedback" type="Label" parent="Page/PageScroll/Row/PageContent"]
+visible = false
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="NextSpacer" type="Control" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(0, 8)
+
+[node name="NextButton" type="Button" parent="Page/PageScroll/Row/PageContent"]
+custom_minimum_size = Vector2(180, 44)
+size_flags_horizontal = 4
+disabled = true
+text = "Next"
+
+[node name="GutterRight" type="Control" parent="Page/PageScroll/Row"]
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1484375
+mouse_filter = 2

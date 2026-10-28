@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cm8k77tftegna"]
+
+[ext_resource type="Script" uid="uid://dc6g5v6qxynni" path="res://scripts/farm/crop_tile.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://ctclk58rc6ed1" path="res://assets/environment/grass.png" id="2_grass"]
+[ext_resource type="Texture2D" uid="uid://cwkp86u5t8xgm" path="res://assets/environment/tile_border.png" id="3_border"]
+[ext_resource type="Texture2D" uid="uid://daid6t37x66ah" path="res://assets/crops/maize_1.png" id="4_crop"]
+[ext_resource type="Texture2D" uid="uid://bpvfjc5koqik3" path="res://assets/effects/warning.png" id="5_marker"]
+
+[node name="CropTile" type="Node2D" unique_id=1909732078]
+script = ExtResource("1_script")
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1258677015]
+texture = ExtResource("2_grass")
+
+[node name="Crop" type="Sprite2D" parent="." unique_id=1422967569]
+visible = false
+texture = ExtResource("4_crop")
+
+[node name="Border" type="Sprite2D" parent="." unique_id=1256989987]
+texture = ExtResource("3_border")
+
+[node name="Highlight" type="ColorRect" parent="." unique_id=1669957545]
+visible = false
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.18)
+
+[node name="MoistureTrack" type="ColorRect" parent="." unique_id=204217516]
+offset_left = -26.0
+offset_top = 22.0
+offset_right = 26.0
+offset_bottom = 28.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="MoistureFill" type="ColorRect" parent="." unique_id=1748439055]
+offset_left = -26.0
+offset_top = 22.0
+offset_right = -26.0
+offset_bottom = 28.0
+mouse_filter = 2
+color = Color(0.2901961, 0.62352943, 0.8156863, 1)
+
+[node name="Marker" type="Sprite2D" parent="." unique_id=993407811]
+visible = false
+position = Vector2(20, -20)
+texture = ExtResource("5_marker")

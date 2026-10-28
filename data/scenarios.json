@@ -1,0 +1,72 @@
+{
+  "_notes": "Crop-management scenarios for the FarmSim research prototype. All three reuse the same farm scene; only the values below change. Editing this file is enough to retune a scenario - no code changes required. Reserves are sized against Config.litres_to_sustain(): the baseline sits comfortably above what its target area needs for a full season, the pest season above it because water is not meant to be the problem there, and the drought deliberately below it. Season order: baseline, pest outbreak, drought. The pest outbreak builds up too: after the first pest_initial_tiles, new pests arrive at a rate that climbs from pest_arrivals_per_minute_start to pest_arrivals_per_minute_peak over pest_arrival_ramp_seconds. The drought builds up: from event_start_seconds the drying multiplier rises steadily from drying_multiplier to event_drying_multiplier over event_ramp_seconds, then holds at that maximum. The test suite asserts all three.",
+  "scenarios": [
+	{
+	  "id": "baseline",
+	  "title": "Scenario 1 - Baseline season",
+	  "crop": "maize",
+	  "duration_seconds": 200.0,
+	  "target_tiles": 10,
+	  "water_reserve_litres": 380.0,
+	  "water_refill_per_second": 0.0,
+	  "drying_multiplier": 1.0,
+	  "event": "none",
+	  "event_start_seconds": 0.0,
+	  "briefing": "A normal maize season. Water is not a problem and the weather is settled. Prepare the seedbed, sow maize, keep it watered and bring in the harvest.",
+	  "objectives": [
+		"Till and sow at least 12 tiles of maize",
+		"Keep the sown tiles out of water stress",
+        "Harvest every tile that reaches maturity"
+	  ],
+	  "quiz_file": "res://data/assessments/quiz_scenario_1.json"
+	},
+	{
+	  "id": "pest",
+	  "title": "Scenario 2 - Pest outbreak",
+	  "crop": "beans",
+	  "duration_seconds": 200.0,
+	  "target_tiles": 10,
+	  "water_reserve_litres": 300.0,
+	  "water_refill_per_second": 0.0,
+	  "drying_multiplier": 1.1,
+	  "event": "pest",
+	  "event_start_seconds": 35.0,
+	  "pest_initial_tiles": 4,
+	  "briefing": "Beans this season, and water is not the problem. Partway through the season a pest outbreak starts somewhere in the field, and more pests keep arriving - faster as the season goes on. Finding them and dealing with them is the Field Monitor's job - and the rest of the field still has to be farmed.",
+	  "briefing_solo": "Beans this season, and water is not the problem. Partway through the season a pest outbreak starts somewhere in the field, and more pests keep arriving - faster as the season goes on. You have to find them and treat them while still farming the rest of the field.",
+	  "objectives": [
+		"Till and sow beans",
+		"Scout the field so an outbreak is found while it is still small",
+        "Treat infested tiles before the pests spread to their neighbours"
+	  ],
+	  "quiz_file": "res://data/assessments/quiz_scenario_2.json",
+	  "pest_spread_chance_per_second": 0.065,
+	  "pest_arrivals_per_minute_start": 1.0,
+	  "pest_arrivals_per_minute_peak": 4.5,
+	  "pest_arrival_ramp_seconds": 110.0
+	},
+	{
+	  "id": "drought",
+	  "title": "Scenario 3 - Drought season",
+	  "crop": "maize",
+	  "duration_seconds": 200.0,
+	  "target_tiles": 4,
+	  "water_reserve_litres": 140.0,
+	  "water_refill_per_second": 0.0,
+	  "drying_multiplier": 1.15,
+	  "event": "drought",
+	  "event_start_seconds": 30.0,
+	  "briefing": "Maize again, but the season turns dry. Once the drought sets in it keeps getting worse: the soil dries a little faster every minute until the crop is drinking more than twice its normal water. The farm has one shared reserve and it will not be enough for the whole field. Decide together what to protect.",
+	  "briefing_solo": "Maize again, but the season turns dry. Once the drought sets in it keeps getting worse: the soil dries a little faster every minute until the crop is drinking more than twice its normal water. The farm has one water reserve and it will not be enough for the whole field. Decide what to protect.",
+	  "objectives": [
+		"Decide together how much ground you can actually keep watered, and sow only that",
+		"Share the reserve - every litre one player uses is a litre the other cannot",
+        "Keep the tiles you commit to out of stress instead of watering everything a little"
+	  ],
+	  "quiz_file": "res://data/assessments/quiz_scenario_3.json",
+	  "event_drying_multiplier": 2.6,
+	  "event_ramp_seconds": 100.0
+	}
+
+  ]
+}

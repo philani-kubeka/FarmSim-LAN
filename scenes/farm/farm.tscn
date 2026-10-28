@@ -1,0 +1,365 @@
+[gd_scene format=3 uid="uid://bcse4rl65xogw"]
+
+[ext_resource type="Script" uid="uid://qrwm7ouccl3n" path="res://scripts/farm/farm.gd" id="1_farm"]
+[ext_resource type="PackedScene" path="res://scenes/farm/field.tscn" id="2_field"]
+[ext_resource type="PackedScene" path="res://scenes/farm/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" path="res://scenes/ui/farm_hud.tscn" id="4_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_overlay.tscn" id="5_pause"]
+[ext_resource type="Texture2D" uid="uid://ctclk58rc6ed1" path="res://assets/environment/grass.png" id="6_grass"]
+[ext_resource type="Texture2D" uid="uid://c106mlfy5q6p7" path="res://assets/environment/well.png" id="7_well"]
+[ext_resource type="Script" uid="uid://bilrqefuw7rbx" path="res://scripts/farm/water_reserve.gd" id="10_water"]
+[ext_resource type="Script" uid="uid://b7rfgywsl2w68" path="res://scripts/systems/planting_system.gd" id="11_planting"]
+[ext_resource type="Script" uid="uid://dxsq0wfidgt81" path="res://scripts/systems/irrigation_system.gd" id="12_irrigation"]
+[ext_resource type="Script" uid="uid://c1o8tpva2p1qt" path="res://scripts/systems/harvesting_system.gd" id="13_harvesting"]
+[ext_resource type="Script" uid="uid://ckfcby2k16rgs" path="res://scripts/systems/scouting_system.gd" id="14_scouting"]
+[ext_resource type="Script" uid="uid://dkgijk588svne" path="res://scripts/systems/growth_system.gd" id="15_growth"]
+[ext_resource type="Script" uid="uid://dqh3rwffqmurj" path="res://scripts/systems/weather_system.gd" id="16_weather"]
+[ext_resource type="Script" uid="uid://d2kq4bv3udisi" path="res://scripts/farm/fence_ring.gd" id="18_fence"]
+[ext_resource type="Texture2D" uid="uid://r3gif7ucuuft" path="res://assets/decor/tree_round.png" id="d1_tree_round"]
+[ext_resource type="Texture2D" uid="uid://c7w6vp13ene13" path="res://assets/decor/tree_round_2.png" id="d2_tree_round_2"]
+[ext_resource type="Texture2D" uid="uid://c084fts0sdyi8" path="res://assets/decor/tree_fruit.png" id="d3_tree_fruit"]
+[ext_resource type="Texture2D" uid="uid://u5vphgho8gr3" path="res://assets/decor/tree_pine.png" id="d4_tree_pine"]
+[ext_resource type="Texture2D" uid="uid://c7rdkeyvyn6pj" path="res://assets/decor/bush.png" id="d5_bush"]
+[ext_resource type="Texture2D" uid="uid://mx0lrqnaxeri" path="res://assets/decor/bush_berries.png" id="d6_bush_berries"]
+[ext_resource type="Texture2D" uid="uid://wxipox5p5u80" path="res://assets/decor/bush_small.png" id="d7_bush_small"]
+[ext_resource type="Texture2D" uid="uid://6npcs3lwu7sv" path="res://assets/decor/flowers_pink.png" id="d8_flowers_pink"]
+[ext_resource type="Texture2D" uid="uid://b27jc4jwesa5e" path="res://assets/decor/flowers_yellow.png" id="d9_flowers_yellow"]
+[ext_resource type="Texture2D" uid="uid://d1v43tu8fep7o" path="res://assets/decor/flowers_white.png" id="d10_flowers_white"]
+[ext_resource type="Texture2D" uid="uid://x1ijyxpatsak" path="res://assets/decor/flowers_purple.png" id="d11_flowers_purple"]
+[ext_resource type="Texture2D" uid="uid://hbphheygyxet" path="res://assets/decor/flowers_orange.png" id="d12_flowers_orange"]
+[ext_resource type="Texture2D" uid="uid://c14u5dl1ja80j" path="res://assets/decor/flowers_mixed.png" id="d13_flowers_mixed"]
+[ext_resource type="Texture2D" uid="uid://o0yxud3pr6qj" path="res://assets/decor/grass_tuft_1.png" id="d14_grass_tuft_1"]
+[ext_resource type="Texture2D" uid="uid://cwagkd8xx6381" path="res://assets/decor/grass_tuft_2.png" id="d15_grass_tuft_2"]
+[ext_resource type="Texture2D" uid="uid://retnlc16uct3" path="res://assets/decor/grass_tuft_3.png" id="d16_grass_tuft_3"]
+[ext_resource type="Texture2D" uid="uid://bobg80ouqq8hp" path="res://assets/decor/rock.png" id="d17_rock"]
+[ext_resource type="Texture2D" uid="uid://c67wl5utjw05b" path="res://assets/decor/dirt_path.png" id="d18_dirt_path"]
+[ext_resource type="Texture2D" uid="uid://b5ybh15culy18" path="res://assets/decor/garden_toolbox.png" id="d19_garden_toolbox"]
+[ext_resource type="Texture2D" uid="uid://4us6g4ejitj6" path="res://assets/decor/ground_variation.png" id="d20_ground_variation"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_top"]
+size = Vector2(1120, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bottom"]
+size = Vector2(1120, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_left"]
+size = Vector2(32, 452)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_right"]
+size = Vector2(32, 452)
+
+[node name="Farm" type="Node2D" unique_id=1529464182]
+script = ExtResource("1_farm")
+
+[node name="Background" type="CanvasLayer" parent="." unique_id=1876825119]
+layer = -1
+
+[node name="Backdrop" type="ColorRect" parent="Background" unique_id=628959644]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.22745098, 0.36078432, 0.18823528, 1)
+
+[node name="Grass" type="TextureRect" parent="Background" unique_id=956283372]
+texture_repeat = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("6_grass")
+stretch_mode = 1
+
+[node name="DecorGround" type="Node2D" parent="." unique_id=2010672960]
+editor_description = "Level design: things lying flat on the grass (paths, rocks, tufts, low flowers). Drawn under everything else. See LEVEL_DESIGN.md."
+
+[node name="GroundVariation" type="Sprite2D" parent="DecorGround" unique_id=415472804]
+texture = ExtResource("d20_ground_variation")
+centered = false
+
+[node name="PathFromWell" type="Sprite2D" parent="DecorGround" unique_id=289250239]
+position = Vector2(255, 348)
+texture = ExtResource("d18_dirt_path")
+
+[node name="PathFromToolbox" type="Sprite2D" parent="DecorGround" unique_id=851782696]
+position = Vector2(1025, 339)
+texture = ExtResource("d18_dirt_path")
+flip_h = true
+
+[node name="GrassTuft1" type="Sprite2D" parent="DecorGround" unique_id=710815913]
+position = Vector2(282, 420)
+texture = ExtResource("d14_grass_tuft_1")
+
+[node name="GrassTuft2" type="Sprite2D" parent="DecorGround" unique_id=833626172]
+position = Vector2(150, 402)
+texture = ExtResource("d15_grass_tuft_2")
+
+[node name="GrassTuft3" type="Sprite2D" parent="DecorGround" unique_id=400516991]
+position = Vector2(1000, 430)
+texture = ExtResource("d16_grass_tuft_3")
+
+[node name="GrassTuft4" type="Sprite2D" parent="DecorGround" unique_id=1754156168]
+position = Vector2(1150, 392)
+texture = ExtResource("d14_grass_tuft_1")
+
+[node name="GrassTuft5" type="Sprite2D" parent="DecorGround" unique_id=282065793]
+position = Vector2(266, 520)
+texture = ExtResource("d15_grass_tuft_2")
+
+[node name="GrassTuft6" type="Sprite2D" parent="DecorGround" unique_id=1342769020]
+position = Vector2(1014, 522)
+texture = ExtResource("d16_grass_tuft_3")
+
+[node name="GrassTuft7" type="Sprite2D" parent="DecorGround" unique_id=983154173]
+position = Vector2(84, 602)
+texture = ExtResource("d15_grass_tuft_2")
+
+[node name="GrassTuft8" type="Sprite2D" parent="DecorGround" unique_id=213815560]
+position = Vector2(1196, 602)
+texture = ExtResource("d14_grass_tuft_1")
+
+[node name="GrassTuft9" type="Sprite2D" parent="DecorGround" unique_id=892023372]
+position = Vector2(470, 604)
+texture = ExtResource("d16_grass_tuft_3")
+
+[node name="GrassTuft10" type="Sprite2D" parent="DecorGround" unique_id=929846087]
+position = Vector2(812, 604)
+texture = ExtResource("d14_grass_tuft_1")
+
+[node name="Rock1" type="Sprite2D" parent="DecorGround" unique_id=1001673228]
+position = Vector2(292, 246)
+texture = ExtResource("d17_rock")
+
+[node name="Rock2" type="Sprite2D" parent="DecorGround" unique_id=1308293452]
+position = Vector2(990, 248)
+texture = ExtResource("d17_rock")
+
+[node name="Rock3" type="Sprite2D" parent="DecorGround" unique_id=623611773]
+position = Vector2(132, 470)
+texture = ExtResource("d17_rock")
+
+[node name="Flowers1" type="Sprite2D" parent="DecorGround" unique_id=1452479295]
+position = Vector2(639, 600)
+texture = ExtResource("d10_flowers_white")
+
+[node name="Flowers2" type="Sprite2D" parent="DecorGround" unique_id=382382011]
+position = Vector2(330, 600)
+texture = ExtResource("d8_flowers_pink")
+
+[node name="Flowers3" type="Sprite2D" parent="DecorGround" unique_id=1985368173]
+position = Vector2(947.5, 603)
+scale = Vector2(0.8863636, 0.93333334)
+texture = ExtResource("d11_flowers_purple")
+
+[node name="PlotBackdrop" type="ColorRect" parent="." unique_id=1134483588]
+offset_left = 310.0
+offset_top = 206.0
+offset_right = 970.0
+offset_bottom = 546.0
+mouse_filter = 2
+color = Color(0.2, 0.15, 0.09, 0.72)
+
+[node name="Field" parent="." unique_id=292603993 instance=ExtResource("2_field")]
+position = Vector2(320, 216)
+
+[node name="DecorLow" type="Node2D" parent="." unique_id=1355552120]
+editor_description = "Level design: flowers and small plants inside the fence. Drawn under the fence and the players."
+
+[node name="Flowers4" type="Sprite2D" parent="DecorLow" unique_id=585370524]
+position = Vector2(186, 214)
+texture = ExtResource("d8_flowers_pink")
+
+[node name="Flowers5" type="Sprite2D" parent="DecorLow" unique_id=814478368]
+position = Vector2(236, 216)
+texture = ExtResource("d9_flowers_yellow")
+
+[node name="Flowers6" type="Sprite2D" parent="DecorLow" unique_id=724529103]
+position = Vector2(282, 214)
+texture = ExtResource("d11_flowers_purple")
+
+[node name="Flowers7" type="Sprite2D" parent="DecorLow" unique_id=2077665960]
+position = Vector2(1040, 216)
+texture = ExtResource("d13_flowers_mixed")
+
+[node name="Flowers8" type="Sprite2D" parent="DecorLow" unique_id=1853377116]
+position = Vector2(1100, 214)
+texture = ExtResource("d8_flowers_pink")
+
+[node name="Flowers9" type="Sprite2D" parent="DecorLow" unique_id=1149913292]
+position = Vector2(160, 324)
+texture = ExtResource("d12_flowers_orange")
+
+[node name="Flowers10" type="Sprite2D" parent="DecorLow" unique_id=611681858]
+position = Vector2(258, 300)
+texture = ExtResource("d9_flowers_yellow")
+
+[node name="Flowers11" type="Sprite2D" parent="DecorLow" unique_id=1206771660]
+position = Vector2(1144, 324)
+texture = ExtResource("d12_flowers_orange")
+
+[node name="Flowers12" type="Sprite2D" parent="DecorLow" unique_id=770436817]
+position = Vector2(1004, 300)
+texture = ExtResource("d11_flowers_purple")
+
+[node name="Flowers13" type="Sprite2D" parent="DecorLow" unique_id=1774312836]
+position = Vector2(220, 540)
+texture = ExtResource("d13_flowers_mixed")
+
+[node name="Flowers14" type="Sprite2D" parent="DecorLow" unique_id=239360033]
+position = Vector2(1031, 527)
+texture = ExtResource("d10_flowers_white")
+
+[node name="Flowers15" type="Sprite2D" parent="DecorLow" unique_id=1087550277]
+position = Vector2(1090, 545)
+texture = ExtResource("d9_flowers_yellow")
+
+[node name="Fences" type="Node2D" parent="." unique_id=274268223]
+texture_repeat = 2
+script = ExtResource("18_fence")
+
+[node name="Well" type="Sprite2D" parent="." unique_id=1303733131]
+position = Vector2(203, 273)
+texture = ExtResource("7_well")
+
+[node name="WellLabel" type="Label" parent="." unique_id=2015182119]
+offset_left = 193.0
+offset_top = 313.0
+offset_right = 333.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.2901961, 0.62352943, 0.8156863, 1)
+theme_override_colors/font_outline_color = Color(0.05, 0.1, 0.14, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "Shared well"
+
+[node name="Boundary" type="StaticBody2D" parent="." unique_id=263112061]
+
+[node name="Top" type="CollisionShape2D" parent="Boundary" unique_id=1864093085]
+position = Vector2(640, 168)
+shape = SubResource("RectangleShape2D_top")
+
+[node name="Bottom" type="CollisionShape2D" parent="Boundary" unique_id=1800063150]
+position = Vector2(640, 588)
+shape = SubResource("RectangleShape2D_bottom")
+
+[node name="Left" type="CollisionShape2D" parent="Boundary" unique_id=1976004815]
+position = Vector2(96, 378)
+shape = SubResource("RectangleShape2D_left")
+
+[node name="Right" type="CollisionShape2D" parent="Boundary" unique_id=904227976]
+position = Vector2(1179, 376)
+shape = SubResource("RectangleShape2D_right")
+
+[node name="WaterReserve" type="Node" parent="." unique_id=1987367522]
+script = ExtResource("10_water")
+
+[node name="Systems" type="Node" parent="." unique_id=992464194]
+
+[node name="PlantingSystem" type="Node" parent="Systems" unique_id=1101722358]
+script = ExtResource("11_planting")
+
+[node name="IrrigationSystem" type="Node" parent="Systems" unique_id=2110943998]
+script = ExtResource("12_irrigation")
+reserve_path = NodePath("../../WaterReserve")
+
+[node name="HarvestingSystem" type="Node" parent="Systems" unique_id=1350965360]
+script = ExtResource("13_harvesting")
+
+[node name="ScoutingSystem" type="Node" parent="Systems" unique_id=210868958]
+script = ExtResource("14_scouting")
+
+[node name="GrowthSystem" type="Node" parent="Systems" unique_id=1730392769]
+script = ExtResource("15_growth")
+
+[node name="WeatherSystem" type="Node" parent="Systems" unique_id=211554208]
+script = ExtResource("16_weather")
+
+[node name="DecorTall" type="Node2D" parent="." unique_id=1659921310]
+editor_description = "Level design: bushes, trees and the garden toolbox. Drawn over the fence, under the players."
+
+[node name="GardenToolbox" type="Sprite2D" parent="DecorTall" unique_id=1070172719]
+position = Vector2(1068, 267)
+texture = ExtResource("d19_garden_toolbox")
+
+[node name="ToolboxLabel" type="Label" parent="DecorTall/GardenToolbox" unique_id=1184209271]
+offset_left = -66.0
+offset_top = 38.0
+offset_right = 66.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.88, 0.74, 0.5, 1)
+theme_override_colors/font_outline_color = Color(0.12, 0.09, 0.05, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 14
+text = "Garden toolbox"
+horizontal_alignment = 1
+
+[node name="Bush1" type="Sprite2D" parent="DecorTall" unique_id=690103271]
+position = Vector2(140, 222)
+texture = ExtResource("d5_bush")
+
+[node name="BerryBush1" type="Sprite2D" parent="DecorTall" unique_id=399098194]
+position = Vector2(1144, 222)
+texture = ExtResource("d6_bush_berries")
+
+[node name="SmallBush1" type="Sprite2D" parent="DecorTall" unique_id=287344909]
+position = Vector2(143, 549)
+texture = ExtResource("d7_bush_small")
+
+[node name="Bush2" type="Sprite2D" parent="DecorTall" unique_id=1855834399]
+position = Vector2(1134, 541)
+texture = ExtResource("d5_bush")
+
+[node name="Tree1" type="Sprite2D" parent="DecorTall" unique_id=2062606724]
+position = Vector2(43, 250)
+texture = ExtResource("d1_tree_round")
+
+[node name="Pine1" type="Sprite2D" parent="DecorTall" unique_id=1605633625]
+position = Vector2(54, 390)
+texture = ExtResource("d4_tree_pine")
+
+[node name="FruitTree1" type="Sprite2D" parent="DecorTall" unique_id=1093724693]
+position = Vector2(-29, 440)
+texture = ExtResource("d3_tree_fruit")
+
+[node name="Tree2" type="Sprite2D" parent="DecorTall" unique_id=742521156]
+position = Vector2(1340, 244)
+texture = ExtResource("d2_tree_round_2")
+flip_h = true
+
+[node name="FruitTree2" type="Sprite2D" parent="DecorTall" unique_id=1449162267]
+position = Vector2(1369, 404)
+texture = ExtResource("d3_tree_fruit")
+
+[node name="Tree3" type="Sprite2D" parent="DecorTall" unique_id=2030135214]
+position = Vector2(-59, 307)
+texture = ExtResource("d2_tree_round_2")
+
+[node name="Pine3" type="Sprite2D" parent="DecorTall" unique_id=759919859]
+position = Vector2(-115, 467)
+texture = ExtResource("d4_tree_pine")
+
+[node name="BerryBush2" type="Sprite2D" parent="DecorTall" unique_id=649177989]
+position = Vector2(88, 667)
+texture = ExtResource("d6_bush_berries")
+
+[node name="Tree4" type="Sprite2D" parent="DecorTall" unique_id=306344723]
+position = Vector2(1234, 329)
+texture = ExtResource("d1_tree_round")
+
+[node name="Bush3" type="Sprite2D" parent="DecorTall" unique_id=1277428623]
+position = Vector2(1377, 655)
+texture = ExtResource("d5_bush")
+
+[node name="Player1" parent="." unique_id=1260522486 instance=ExtResource("3_player")]
+position = Vector2(196, 470)
+
+[node name="Player2" parent="." unique_id=1602818548 instance=ExtResource("3_player")]
+position = Vector2(1084, 470)
+
+[node name="HUD" parent="." unique_id=1627331669 instance=ExtResource("4_hud")]
+
+[node name="PauseOverlay" parent="." unique_id=1808420094 instance=ExtResource("5_pause")]
